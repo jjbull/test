@@ -82,18 +82,3 @@ def signout():
   session.pop('email', None)
   return redirect(url_for('home'))
 
-@app.route('/test')
-def test():
-    return """<http><body><form action="buy" method="POST">
-<script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_w3qNBkDR8A4jkKejBmsMdH34"
-    data-amount="999"
-    data-name="jeffknupp.com"
-    data-description="Writing Idiomatic Python 3 PDF ($9.99)">
-</script>
-<input type="hidden" name="product_id" value="2" />
-</form>
-</body>
-</html>
-"""
