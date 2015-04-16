@@ -1,7 +1,37 @@
+import stripe 
 {% extends "layout.html" %}
 {% block content %}
   <div class="jumbo">
-    <h2>Profile<h2>
-    <h3>This is {{ session['email'] }}'s profile page<h3>
+    <h2>Shopping Profile</h2>
+    
+    
   </div>
+  <div class= "shop">
+  <table >  
+    <tr>
+      <td> <img src="{{ url_for('static', filename='img/l3.jpg') }}" alt='w'></td>
+      <td> HP SPECTRE 
+      <ul style="list-style-type:circle">
+  <li>5th Gen Intel Core i7-5500U processor</li>
+  <li> 8GB LPDDR3 SDRAM, Note: Optical drive not included</li>
+  <li>13.3" LED-backlit touch-screen display</li>
+   <li>Weighs only 3.33 lbs. and measures just 0.63" thin</li>
+ <li>  
+   <form action="buy" method ="POST">
+<script 
+     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_w3qNBkDR8A4jkKejBmsMdH34"
+    data-amount="99999"
+    data-name="CompuStore"
+    data-description="HP SPECTRE XX NEW generation ">
+</script>
+ <input type="hidden" name="product_id" value="2" />
+</form>    
+        </li>
+</ul></td>
+    </tr>
+    </table>
+   
+</div>
+ 
 {% endblock %}
